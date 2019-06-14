@@ -1,0 +1,47 @@
+.lx-load-mark {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.lx-load-box {
+  position: fixed;
+  z-index: 3;
+  width: 7.6em;
+  min-height: 7.6em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  border-radius: 5px;
+  color: #fff;
+}
+.van-dialog {
+  width: auto ;
+  max-width: 85%;
+  min-width: 250px;
+}
+.van-dialog__message {
+  text-align: center;
+}
+.van-dialog__confirm,
+.van-dialog__confirm:active {
+  color: #1C83E3;
+}
+.van-swipe-cell {
+  overflow: hidden;
+  position: relative;
+}
+.van-swipe-cell__left,
+.van-swipe-cell__right {
+  top: 0;
+  height: 100%;
+  position: absolute;
+}
+.van-swipe-cell__left {
+  left: 0;
+  transform: translate3d(-100%, 0, 0);
+}
+.van-swipe-cell__right {
+  right: 0;
+  transform: translate3d(100%, 0, 0);
+}

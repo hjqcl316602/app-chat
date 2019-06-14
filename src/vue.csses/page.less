@@ -1,0 +1,143 @@
+
+@import 'theme';
+//************************************************ 行高   **********************************************************/
+.vp-row{ height : 50px ; }
+.vp-row--min{ min-height : 50px ; }
+//************************************************ 背景颜色   **********************************************************/
+.vp-bg{ background-color: white }
+
+.vp-bg--shade{
+  background-image:linear-gradient(135deg,@color-assist,@color-theme);/*background-image:linear-gradient(to bottom,@color-assist,@color-theme)*/;
+}
+.vp-bg--theme{ background-color: @color-theme }
+.vp-bg--assist{ background-color: @color-assist }
+
+
+//************************************************ 按钮   **********************************************************/
+
+.vp-btn{ display:  inline-block ; cursor: pointer ; white-space:nowrap; }
+.vp-btn__submit{ display:  flex ;  white-space:nowrap;cursor: pointer ; width: 100%;height :40px; border-radius: 4px;text-align: center ; line-height: 40px;color: @color-white;align-items: center;justify-content: center ;font-weight: 800 ; }
+.vp-btn__submit.vp-btn__br-circle{ border-radius: 40px }
+
+.vp-btn__submit.vp-btn--theme { background-color: @color-theme;color: white ; }
+
+.vp-btn--shadow{ box-shadow: 0 2px 5px 0 rgba(0,0,0,.26)}
+
+.vp-btn__simple{ cursor: pointer ; white-space:nowrap;font-weight: 800 ; height:40px;line-height: 40px;text-align: center ; background-color: transparent ; border-radius: 40px;}
+.vp-btn__simple.vp-btn--theme{  color: @color-theme;border: 1px solid @color-theme ;   }
+.vp-btn__simple.vp-btn--normal{  color: @color-light;border: 1px solid @color-light ;  }
+
+.vp-btn__normal{ cursor: pointer ; white-space:nowrap;font-weight: 800 ;display: flex ; align-items: center;justify-content: center;width: 100%;height:100%; }
+.vp-btn__normal.vp-btn--theme{ background-color: @color-theme ; color: @color-white ; }
+.vp-btn__normal.vp-btn--danger{ background-color: @color-danger ; color: @color-white ; }
+
+
+
+[class*=vp-btn__]{ position:relative;overflow: hidden; }
+[class*=vp-btn__]:after{ content:" "; overflow: hidden; position:absolute;left:0;top: 0 ; display: inline-block;width: 100%;height:100% ; background-color: fade(@color-white,0) ; transition: all 0.5s  }
+[class*=vp-btn__]:active:after{  background-color:  fade(@color-white,30);   }
+[class*=vp-btn__].vp-btn__br-circle:after{ border-radius: 40px }
+
+//************************************************ 输入框   **********************************************************/
+
+.vp-input__outer { position: relative; }
+.vp-input[type=text],.vp-input[type=password]{
+  text-align: left;
+  -webkit-appearance: none;
+  background-image: none;
+  border-radius: 4px;
+  background-color: transparent;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid @color-gray;
+  color: @color-dark;
+  display: inline-block;
+  font-size: inherit;
+  height: 40px;
+  line-height: 1;
+  outline: 0;
+  padding: 0 15px;
+  -webkit-transition: border-color .4s cubic-bezier(.645, .045, .355, 1);
+  transition: border-color .4s cubic-bezier(.645, .045, .355, 1);
+  width: 100%;
+  position:relative;
+}
+.vp-input.vp-input__bg--transparent{ background-color: transparent;color: white }
+.vp-input.vp-input__border--white{ border: 1px solid rgba(255,255,255,.6)}
+.vp-input.vp-input__br-circle{ border-radius: 40px }
+
+.vp-input.vp-input__border--white:focus{
+  border-color: rgba(255,255,255,1);
+  outline: 0
+}
+.vp-input:focus {
+  border-color: @color-theme;
+  outline: 0
+}
+.vp-input::placeholder{ color: @color-light }
+
+.vp-input__clear{ position: absolute;right: 18px;top:50%;transform: translateY(-50%);z-index: 10; }
+.vp-input__clear+.vp-input,.vp-input__clear~.vp-input{ padding-right: 50px }
+
+.vp-input__clear.vp-input__clear--double+.vp-input,.vp-input__clear.vp-input__clear--double~.vp-input{ padding-right: 70px }
+
+/******************************** img ***********************************/
+
+.vp-img__inner {  height:100%;width:100%;overflow: hidden;position: relative;  }
+.vp-img__inner img,
+.vp-img__inner img.vp-img--center{ position: absolute ; top:50% ; left:50% ; transform: translate(-50%,-50%) ; };
+.vp-img__inner img.vp-img--max{ max-width: 100%;max-height: 100% }
+.vp-img__inner img.vp-img--cover{ width: 100%;height: 100% }
+
+.vp-img__inner img[src=""],
+.vp-img__inner img:not([src]) {  opacity: 0;  }
+.vp-img__inner img.vp-img--error{ display: none  }
+
+.vp-img__inner img[src=""]+img.vp-img--error,
+.vp-img__inner img:not([src])+img.vp-img--error {  display: block;width: 100%;height:100%  }
+.vp-img__inner img[src=""]+img.vp-img--error.vp-img--half,
+.vp-img__inner img:not([src])+img.vp-img--error.vp-img--half {  display: block;width: 50%;height:50%  }
+
+.vp-img__inner.vp-img__icon[data-round='35']{ width: 35px ;height:35px;overflow:  hidden ; }
+
+.vp-img__inner.vp-img__circle[data-round='35']{ width: 35px ;height:35px; border-radius: 50%;overflow:  hidden ; }
+.vp-img__inner.vp-img__circle[data-round='30']{ width: 30px ;height:30px; border-radius: 50%;overflow:  hidden ; }
+.vp-img__inner.vp-img__circle[data-round='60']{ width: 60px ;height:60px; border-radius: 50%;overflow:  hidden ; }
+.vp-img__inner.vp-img__circle[data-round='80']{ width: 80px ;height:80px; border-radius: 50%;overflow:  hidden ; }
+
+.vp-img__inner  .vp-img__closed{ position: absolute ; right:-4px;top:-4px;z-index: 10 }
+.vp-img__inner.vp-img__close { overflow: visible }
+
+// 自适应的图片
+.vp-img__self{ display: inline-block ; }
+.vp-img__self[data-max='50%'] { max-width:  50% ; }
+.vp-img__self img { display: inline-block ; width: 100%;height: auto ; }
+.vp-img__self img[src=""],
+.vp-img__self img:not([src]) {  opacity: 0; display: none }
+.vp-img__self img.vp-img--error{ display: none  }
+.vp-img__self img[src=""]+img.vp-img--error,
+.vp-img__self img:not([src])+img.vp-img--error {  display: inline-block;width: 100%;height:100%  }
+
+/******************************* 文件上传 **********************************/
+.vp-file { display: inline-block;
+  input{ display: none }
+}
+
+
+/******************************** 基础样式 ***********************************/
+.vp-footer{ position: fixed ;bottom: 0 ; left:0 ;z-index: 999;width: 100%; }
+.vp-footer--shadow{ box-shadow: 0 0 2px rgba(0,0,0,0.2) }
+
+.vp-header{ position: fixed ;top: 0 ; left:0 ;z-index: 999;width: 100%;}
+.vp-header--shadow{ box-shadow: 0 0 2px rgba(0,0,0,0.2) }
+
+/******************************** 高度随宽度自适应 ***********************************/
+.vp-ratio{}
+.vp-ratio__outer{  position: relative;  height: 0;  width: 100%;  }
+.vp-ratio__outer[data-ratio='2:1']{  padding-top:50%;  }
+.vp-ratio__outer[data-ratio='16:9']{  padding-top:56.25%;  }
+.vp-ratio__outer[data-ratio='1:1']{  padding-top:100%;  }
+.vp-ratio__inner{ width: 100%;height:100% ; position: absolute;left: 0;top:0; }
+
+/****************************** 圆角 *********************************/
+.vp-radius { border-radius:  4px;}
