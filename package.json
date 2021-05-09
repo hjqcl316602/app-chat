@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cube-ui": "^1.12.5",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "mand-mobile": "^1.6.4",
     "qrcodejs2": "0.0.2",
     "qs": "^6.5.2",
