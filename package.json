@@ -16,7 +16,7 @@
     "lodash": "^4.17.11",
     "mand-mobile": "^1.6.4",
     "qrcodejs2": "0.0.2",
-    "qs": "^6.5.2",
+    "qs": "^6.5.3",
     "recorder": "0.0.1",
     "validator.tool": "^1.0.10",
     "vant": "^1.4.4",
